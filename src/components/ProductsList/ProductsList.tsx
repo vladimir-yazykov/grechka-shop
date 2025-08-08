@@ -1,5 +1,5 @@
 import type { ProductInfo } from "../../model/product";
-import { Product } from "../Product/Product";
+import { Product } from "../product/Product/Product";
 import S from "./ProductsList.module.css";
 
 export function ProductsList({ products }: { products: ProductInfo[] }) {

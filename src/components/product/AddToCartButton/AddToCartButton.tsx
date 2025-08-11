@@ -4,6 +4,7 @@ import {
   addProduct,
   selectCartItemById,
 } from "../../../store/features/cartSlice";
+import { ProductQuantityButton } from "../ProductQuantityButton/ProductQuantityButton";
 import S from "./AddToCartButton.module.css";
 
 export function AddToCartButton({ product }: { product: ProductInfo }) {
@@ -24,7 +25,7 @@ export function AddToCartButton({ product }: { product: ProductInfo }) {
   return (
     <>
       {item?.quantity ? (
-        <div />
+        <ProductQuantityButton item={item} />
       ) : (
         <button className={S.button} onClick={add}>
           Добавить в корзину

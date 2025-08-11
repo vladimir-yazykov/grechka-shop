@@ -25,7 +25,7 @@ export function AddToCartButton({ product }: { product: ProductInfo }) {
   return (
     <>
       {item?.quantity ? (
-        <ProductQuantityButton item={item} />
+        <ProductQuantityButton item={item} product={product} />
       ) : (
         <button className={S.button} onClick={add}>
           Добавить в корзину

@@ -2,7 +2,7 @@ import type { CartItem } from "../../../model/cart";
 import type { ProductInfo } from "../../../model/product";
 import { useAppDispatch } from "../../../store";
 import { addProduct, removeProduct } from "../../../store/features/cartSlice";
-import S from "./ProductQuantityButton.module.css";
+import * as C from "./ProductQuantityButton.components";
 
 export function ProductQuantityButton({
   item,
@@ -34,14 +34,10 @@ export function ProductQuantityButton({
     );
   };
   return (
-    <div className={S.container}>
-      <button className={S.button} onClick={remove}>
-        -
-      </button>
-      <div className={S.quantity}>{item.quantity}</div>
-      <button className={S.button} onClick={add}>
-        +
-      </button>
-    </div>
+    <C.Container>
+      <C.Button onClick={remove}>-</C.Button>
+      <C.Quantity>{item.quantity}</C.Quantity>
+      <C.Button onClick={add}>+</C.Button>
+    </C.Container>
   );
 }
